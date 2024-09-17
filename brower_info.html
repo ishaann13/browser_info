@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dedef8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-top: 50px;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: rgb(250, 250, 250);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        }
+        button:hover {
+            background-color: #10d21a;
+        }
+        #browserInfo {
+            background-color: rgb(230, 159, 220);
+            border: 1px solid #d8aeae;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+            max-width: 80%;
+            margin: 20px auto;
+            line-height: 1.6;
+            white-space: pre-wrap; /* Ensures that line breaks are preserved */
+        }
+    </style>
+</head>
+<body>
+    <h1>Click below to get Browser Information</h1>
+    <button onclick="displayBrowserInfo()">Get Browser Information</button>
+    <div id="browserInfo"></div>
+
+    <script>
+        function displayBrowserInfo() {
+            var browserInfo = "<strong>Browser Name:</strong> " + navigator.appName + "<br>";
+            browserInfo += "<strong>Browser Version:</strong> " + navigator.appVersion + "<br>";
+            browserInfo += "<strong>User-agent header:</strong> " + navigator.userAgent + "<br>";
+            browserInfo += "<strong>Platform:</strong> " + navigator.platform + "<br>";
+            browserInfo += "<strong>Language:</strong> " + navigator.language + "<br>";
+
+            document.getElementById("browserInfo").innerHTML = browserInfo;
+        }
+    </script>
+</body>
+</html>
